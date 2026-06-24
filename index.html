@@ -160,45 +160,46 @@ Marriage Counselling • Sexual Health • Mental Wellness • Soft Skills Train
 WhatsApp Consultation
 </a></div></div><div class="footer">© D. Durga | Durga Psychiatric Centre | Durga MindSkillsCare Centre
 
-</div><script>
+</div>
+  
+  <script>
 
 /* Future RSS JSON Integration */
 
-const samplePosts = [
+const RSS_URL =
+'https://durgapsychiatriccentrechennai.wordpress.com/feed/';
 
-{
-title:"Tamil Mental Health Resource",
-link:"https://durgapsychiatriccentrechennai.wordpress.com"
-},
+const API =
+'https://api.rss2json.com/v1/api.json?rss_url=' +
+encodeURIComponent(RSS_URL);
 
-{
-title:"Marriage Counselling Guide",
-link:"https://durgapsychiatriccentrechennai.wordpress.com"
-},
+fetch(API)
+.then(response => response.json())
+.then(data => {
 
-{
-title:"Family Wellness Article",
-link:"https://durgapsychiatriccentrechennai.wordpress.com"
-}
+const container =
+document.getElementById('rss-feed');
 
-];
+container.innerHTML='';
 
-const container=document.getElementById("rss-feed");
-
-container.innerHTML="";
-
-samplePosts.forEach(post=>{
+data.items.slice(0,15).forEach(post => {
 
 container.innerHTML += `
-<div class="article">
-<h3>${post.title}</h3>
-<a href="${post.link}" target="_blank">
+
+<div class="article"><h3>${post.title}</h3><p>${post.pubDate.substring(0,10)}</p><a href="${post.link}" target="_blank">
 Read Article →
-</a>
-</div>
-`;
+</a></div>
+`;});
+
+})
+.catch(error => {
+
+document.getElementById('rss-feed').innerHTML =
+'<div class="article"><h3>Unable to load articles</h3></div>';
 
 });
+</script>
 
-</script></body>
+
+</body>
 </html>
