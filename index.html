@@ -171,14 +171,11 @@ const RSS_URL =
 
 const API =
 'https://api.rss2json.com/v1/api.json?rss_url=' +
-encodeURIComponent(RSS_URL) +
-'&count=50';
+encodeURIComponent(RSS_URL);
 
 fetch(API)
 .then(response => response.json())
 .then(data => {
-
-
 
 const container =
 document.getElementById('rss-feed');
