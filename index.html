@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>D. Durga | Tamil Mental Health Knowledge Hub</title>
+<meta name="description" content="Tamil Mental Health, Relationships, Family Wellness, Sexual Health, Parenting, Soft Skills and Human Development Knowledge Hub by D. Durga.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:   #04080f;
+  --navy:  #071426;
+  --deep:  #0b1e35;
+  --panel: #0e2240;
+  --gold:  #c9a84c;
+  --gold2: #e8c96a;
+  --gold3: #f5e199;
+  --mist:  rgba(201,168,76,0.08);
+  --line:  rgba(201,168,76,0.18);
+  --slate: #8fa8c8;
+  --white: #f8f4ee;
+  --r:     18px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--white);font-family:'Inter',sans-serif;font-size:.93rem;line-height:1.75;overflow-x:hidden;}
+
+/* AMBIENT ORBS */
+.orb{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;opacity:.18;}
+.orb-1{width:520px;height:520px;background:#c9a84c;top:-180px;right:-160px;animation:drift 18s ease-in-out infinite alternate;}
+.orb-2{width:380px;height:380px;background:#1a4a8a;bottom:10%;left:-120px;animation:drift 22s ease-in-out infinite alternate-reverse;}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(30px,40px) scale(1.08)}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(4,8,15,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--gold2);letter-spacing:.5px;text-decoration:none;}
+.nav-links{display:flex;gap:8px;flex-wrap:wrap;}
+.nav-link{color:var(--slate);font-size:.82rem;font-weight:500;text-decoration:none;padding:6px 14px;border-radius:24px;border:1px solid transparent;transition:all .22s;}
+.nav-link:hover{color:var(--gold2);border-color:var(--line);background:var(--mist);}
+.nav-cta{background:linear-gradient(135deg,var(--gold),#a07228);color:var(--ink);font-weight:700;font-size:.82rem;text-decoration:none;padding:8px 20px;border-radius:24px;transition:transform .18s,box-shadow .18s;box-shadow:0 2px 12px rgba(201,168,76,.25);white-space:nowrap;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,.4);}
+
+/* HERO */
+.hero{position:relative;z-index:1;min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 0%,rgba(201,168,76,.13) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 50% 100%,rgba(7,20,38,.9) 0%,transparent 70%);pointer-events:none;}
+.hero-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:10px;}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:36px;height:1px;background:var(--gold);opacity:.5;}
+
+/* Signature triple-ring portrait */
+.portrait-wrap{position:relative;width:160px;height:160px;margin:0 auto 32px;}
+.portrait-wrap::before,.portrait-wrap::after{content:'';position:absolute;border-radius:50%;border:1px solid var(--gold);animation:pulse-ring 3s ease-in-out infinite;}
+.portrait-wrap::before{inset:-12px;opacity:.35;animation-delay:0s;}
+.portrait-wrap::after{inset:-24px;opacity:.15;animation-delay:.6s;}
+@keyframes pulse-ring{0%,100%{transform:scale(1);opacity:.35}50%{transform:scale(1.04);opacity:.55}}
+.portrait-wrap img{width:160px;height:160px;object-fit:cover;border-radius:50%;border:3px solid var(--gold);box-shadow:0 0 40px rgba(201,168,76,.3),0 0 0 8px rgba(201,168,76,.08);display:block;position:relative;z-index:1;}
+
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,5.2rem);font-weight:700;line-height:1.05;letter-spacing:-1px;color:var(--white);margin-bottom:8px;}
+.hero h1 span{color:var(--gold2);}
+.hero-title{font-size:clamp(.85rem,2vw,1.05rem);color:var(--slate);font-weight:300;letter-spacing:.5px;margin-bottom:28px;max-width:520px;}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:44px;max-width:680px;}
+.tag{font-size:.72rem;font-weight:600;letter-spacing:.5px;padding:5px 14px;border-radius:20px;border:1px solid var(--line);color:var(--gold);background:var(--mist);}
+
+/* Stats */
+.stats{display:flex;gap:0;justify-content:center;flex-wrap:wrap;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:rgba(14,34,64,.5);backdrop-filter:blur(8px);max-width:540px;width:100%;}
+.stat{flex:1;min-width:120px;padding:24px 20px;text-align:center;position:relative;}
+.stat+.stat::before{content:'';position:absolute;left:0;top:20%;bottom:20%;width:1px;background:var(--line);}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;color:var(--gold2);line-height:1;margin-bottom:4px;}
+.stat-lbl{font-size:.72rem;color:var(--slate);letter-spacing:1px;text-transform:uppercase;}
+
+/* SECTIONS */
+.section{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:60px 24px;}
+.section-label{font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--white);margin-bottom:32px;line-height:1.2;}
+.section-divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--line) 30%,var(--line) 70%,transparent);margin:0 0 60px;}
+
+/* TAMIL BANNER */
+.tamil-banner{position:relative;z-index:1;background:linear-gradient(135deg,var(--deep) 0%,var(--panel) 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:48px 24px;text-align:center;}
+.tamil-banner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,4vw,2.6rem);color:var(--gold2);margin-bottom:12px;}
+.tamil-banner p{color:var(--slate);max-width:700px;margin:0 auto;}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:20px;}
+.pill{font-size:.75rem;padding:6px 16px;border-radius:20px;font-weight:600;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--gold3);}
+
+/* FEED CONTROLS */
+.feed-controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:28px;}
+.search-wrap{flex:1;min-width:220px;position:relative;}
+.search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--slate);pointer-events:none;}
+#search-input{width:100%;padding:12px 16px 12px 42px;border-radius:12px;border:1px solid var(--line);outline:none;background:var(--panel);color:var(--white);font-size:.9rem;font-family:'Inter',sans-serif;transition:border-color .2s;}
+#search-input:focus{border-color:var(--gold);}
+#search-input::placeholder{color:var(--slate);}
+#sort-select{padding:12px 18px;border-radius:12px;border:1px solid var(--line);outline:none;background:var(--panel);color:var(--gold2);font-size:.88rem;font-family:'Inter',sans-serif;cursor:pointer;transition:border-color .2s;}
+#sort-select:focus{border-color:var(--gold);}
+.count-chip{padding:8px 18px;border-radius:24px;background:rgba(201,168,76,.1);border:1px solid var(--line);color:var(--gold);font-size:.8rem;font-weight:600;white-space:nowrap;}
+
+/* ARTICLE CARDS */
+.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+.art-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s,border-color .22s;position:relative;overflow:hidden;}
+.art-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);opacity:0;transition:opacity .22s;}
+.art-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.4);border-color:rgba(201,168,76,.35);}
+.art-card:hover::before{opacity:1;}
+.art-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.art-num{font-size:.65rem;font-weight:700;letter-spacing:1.5px;color:var(--gold);opacity:.6;}
+.art-date{font-size:.7rem;color:var(--slate);}
+.art-title{font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:600;line-height:1.35;color:var(--white);margin-bottom:10px;flex:1;}
+.art-excerpt{font-size:.8rem;color:var(--slate);line-height:1.6;margin-bottom:18px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.art-btn{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;letter-spacing:.5px;color:var(--gold2);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:8px 16px;align-self:flex-start;transition:background .18s,border-color .18s,color .18s;background:transparent;}
+.art-btn:hover{background:linear-gradient(135deg,var(--gold),#a07228);color:var(--ink);border-color:var(--gold);}
+.art-btn svg{width:13px;height:13px;transition:transform .18s;}
+.art-btn:hover svg{transform:translateX(3px);}
+
+/* STATES */
+.state-card{grid-column:1/-1;text-align:center;padding:80px 24px;}
+.spinner{width:44px;height:44px;margin:0 auto 20px;border:3px solid var(--line);border-top-color:var(--gold);border-radius:50%;animation:spin .75s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.state-card h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--gold2);margin-bottom:8px;}
+.state-card p{color:var(--slate);}
+.retry-btn{margin-top:18px;display:inline-block;padding:10px 28px;border-radius:10px;background:linear-gradient(135deg,var(--gold),#a07228);color:var(--ink);font-weight:700;font-size:.88rem;border:none;cursor:pointer;transition:transform .18s;}
+.retry-btn:hover{transform:scale(1.04);}
+
+/* RESOURCES */
+.res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+.res-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:28px 22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:transform .2s,border-color .2s;}
+.res-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,.4);}
+.res-icon{font-size:1.8rem;}
+.res-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--gold2);}
+.res-desc{font-size:.78rem;color:var(--slate);line-height:1.5;}
+
+/* CTA BANNER */
+.cta-banner{position:relative;z-index:1;background:linear-gradient(135deg,#0b1e35 0%,#142d50 50%,#0b1e35 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:70px 24px;text-align:center;overflow:hidden;}
+.cta-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(201,168,76,.09) 0%,transparent 70%);pointer-events:none;}
+.cta-banner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,3rem);color:var(--white);margin-bottom:12px;}
+.cta-banner h2 em{color:var(--gold2);font-style:normal;}
+.cta-banner p{color:var(--slate);max-width:560px;margin:0 auto 32px;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-gold{background:linear-gradient(135deg,var(--gold),#a07228);color:var(--ink);font-weight:700;font-size:.95rem;padding:14px 32px;border-radius:12px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(201,168,76,.3);transition:transform .18s,box-shadow .18s;}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(201,168,76,.45);}
+.btn-ghost{border:1px solid var(--line);color:var(--gold2);font-weight:600;font-size:.95rem;padding:14px 32px;border-radius:12px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .18s,border-color .18s;}
+.btn-ghost:hover{background:var(--mist);border-color:rgba(201,168,76,.4);}
+
+/* FOOTER */
+footer{position:relative;z-index:1;background:var(--navy);border-top:1px solid var(--line);padding:48px 24px 32px;text-align:center;}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold2);font-weight:700;margin-bottom:6px;}
+.footer-sub{font-size:.78rem;color:var(--slate);margin-bottom:24px;}
+.footer-links{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:28px;}
+.footer-links a{font-size:.78rem;color:var(--slate);text-decoration:none;padding:4px 12px;border-radius:20px;border:1px solid transparent;transition:all .18s;}
+.footer-links a:hover{color:var(--gold2);border-color:var(--line);}
+.footer-copy{font-size:.72rem;color:rgba(143,168,200,.45);}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  nav{padding:12px 16px;}
+  .nav-links{display:none;}
+  .hero{min-height:auto;padding:60px 16px 50px;}
+  .articles-grid{grid-template-columns:1fr;}
+  .stats{max-width:100%;}
+}
+@media(prefers-reduced-motion:reduce){
+  .orb,.portrait-wrap::before,.portrait-wrap::after{animation:none;}
+}
+</style>
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">D. Durga</a>
+  <div class="nav-links">
+    <a href="#articles" class="nav-link">Articles</a>
+    <a href="#resources" class="nav-link">Resources</a>
+    <a href="https://durgapsychiatriccentrechennai.wordpress.com" class="nav-link" target="_blank">WordPress</a>
+    <a href="https://durga-mindskillscare.pages.dev" class="nav-link" target="_blank">Website</a>
+  </div>
+  <a href="https://wa.me/917395944527" class="nav-cta" target="_blank">📲 Consult Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Mental Health &amp; Human Wellness</div>
+  <div class="portrait-wrap">
+    <img src="durga.jpg" alt="D. Durga"
+      onerror="this.src='https://durgapsychiatriccentrechennai.wordpress.com/wp-content/uploads/2026/05/profile_1778568131739.jpg'">
+  </div>
+  <h1>D. <span>Durga</span></h1>
+  <p class="hero-title">Founder &amp; CEO · Durga Psychiatric Centre · Durga MindSkillsCare Centre</p>
+  <div class="hero-tags">
+    <span class="tag">Mental Health</span>
+    <span class="tag">Relationships</span>
+    <span class="tag">Sexual Wellness</span>
+    <span class="tag">Family Counselling</span>
+    <span class="tag">Soft Skills</span>
+    <span class="tag">Parenting</span>
+    <span class="tag">Emotional Intelligence</span>
+    <span class="tag">AI Era Wellness</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-lbl">Resources</div></div>
+    <div class="stat"><div class="stat-num">100+</div><div class="stat-lbl">Tamil Articles</div></div>
+    <div class="stat"><div class="stat-num">200+</div><div class="stat-lbl">English Articles</div></div>
+  </div>
+</section>
+
+<!-- TAMIL BANNER -->
+<div class="tamil-banner">
+  <h2>📚 தமிழ் அறிவுக் களஞ்சியம்</h2>
+  <p>Tamil-language expertise in mental health, marriage counselling, sexual health, parenting, soft skills, emotional intelligence and family wellness.</p>
+  <div class="pill-row">
+    <span class="pill">மனநலம்</span>
+    <span class="pill">திருமண ஆலோசனை</span>
+    <span class="pill">பாலியல் ஆரோக்கியம்</span>
+    <span class="pill">பெற்றோர் வழிகாட்டுதல்</span>
+    <span class="pill">மென்திறன்கள்</span>
+    <span class="pill">குடும்ப நலன்</span>
+  </div>
+</div>
+
+<div class="section-divider" style="margin-top:0;"></div>
+
+<!-- ARTICLES -->
+<section class="section" id="articles">
+  <div class="section-label">Knowledge Hub</div>
+  <div class="section-title">Latest Articles
+    <span id="post-count" style="font-size:1rem;color:var(--slate);font-weight:400;margin-left:10px;font-family:'Inter',sans-serif;"></span>
+  </div>
+  <div class="feed-controls">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input id="search-input" type="text" placeholder="Search 50 articles…" oninput="filterPosts()">
+    </div>
+    <select id="sort-select" onchange="filterPosts()">
+      <option value="newest">⬇ Newest First</option>
+      <option value="oldest">⬆ Oldest First</option>
+      <option value="az">A → Z</option>
+      <option value="za">Z → A</option>
+    </select>
+    <div class="count-chip" id="count-chip">Loading…</div>
+  </div>
+  <div class="articles-grid" id="rss-feed">
+    <div class="state-card">
+      <div class="spinner"></div>
+      <h3>Fetching Articles</h3>
+      <p>Loading 50 posts from WordPress…</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- RESOURCES -->
+<section class="section" id="resources">
+  <div class="section-label">Platforms</div>
+  <div class="section-title">Our Digital Ecosystem</div>
+  <div class="res-grid">
+    <a class="res-card" href="https://durgapsychiatriccentrechennai.wordpress.com" target="_blank" rel="noopener">
+      <div class="res-icon">📖</div>
+      <div class="res-name">WordPress Library</div>
+      <div class="res-desc">200+ English &amp; Tamil expert articles on mental health, wellness and human development.</div>
+    </a>
+    <a class="res-card" href="https://durga-mindskillscare.pages.dev" target="_blank" rel="noopener">
+      <div class="res-icon">🌐</div>
+      <div class="res-name">Main Website</div>
+      <div class="res-desc">Full service hub — counselling, workshops, AI tools and resources in one place.</div>
+    </a>
+    <a class="res-card" href="https://durgapsychiatric.blogspot.com" target="_blank" rel="noopener">
+      <div class="res-icon">✍️</div>
+      <div class="res-name">Blogger</div>
+      <div class="res-desc">Extended articles, insights and case-based wellness guides.</div>
+    </a>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>Ready to Begin Your <em>Healing Journey?</em></h2>
+  <p>Marriage counselling • Sexual health • Mental wellness • Soft skills training • Parenting guidance — online &amp; in-person.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/917395944527" class="btn-gold" target="_blank">📲 WhatsApp Consultation</a>
+    <a href="https://durga-mindskillscare.pages.dev" class="btn-ghost" target="_blank">🌐 Explore Website</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">D. Durga</div>
+  <div class="footer-sub">DPN · DAHM · BBA · MBA · MSW (Medical &amp; Psychiatry)</div>
+  <div class="footer-links">
+    <a href="https://durgapsychiatriccentrechennai.wordpress.com" target="_blank">WordPress</a>
+    <a href="https://durga-mindskillscare.pages.dev" target="_blank">Website</a>
+    <a href="https://durgapsychiatric.blogspot.com" target="_blank">Blogger</a>
+    <a href="https://wa.me/917395944527" target="_blank">WhatsApp</a>
+  </div>
+  <div class="footer-copy">© 2026 Durga Psychiatric Centre · Durga MindSkillsCare Centre · T Nagar, Chennai, India</div>
+</footer>
+
+<script>
+/* ── Strategy: rss2json (free, no key needed for RSS feeds, works cross-origin)
+   converts WordPress RSS feed → JSON, bypassing CORS completely ── */
+const RSS_FEED = 'https://durgapsychiatriccentrechennai.wordpress.com/feed/';
+const RSS2JSON = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_FEED) + '&api_key=cu3umhxqmobqfshtxfzocfeb0iewacfljuhcxjko&count=50';
+
+let allPosts = [];
+
+function stripHtml(h){const d=document.createElement('div');d.innerHTML=h;return d.textContent||d.innerText||'';}
+function fmtDate(str){
+  const d = new Date(str);
+  if(isNaN(d)) return str;
+  return d.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
+}
+const arrow=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+
+function renderPosts(posts){
+  const grid=document.getElementById('rss-feed');
+  const chip=document.getElementById('count-chip');
+  const badge=document.getElementById('post-count');
+  chip.textContent=posts.length+' articles';
+  badge.textContent='('+posts.length+')';
+  if(posts.length===0){
+    grid.innerHTML='<div class="state-card"><h3>No articles found</h3><p>Try a different search term.</p></div>';
+    return;
+  }
+  grid.innerHTML=posts.map((p,i)=>{
+    const title   = p.title || '';
+    const excerpt = stripHtml(p.description||'').trim().substring(0,130);
+    const date    = fmtDate(p.pubDate||'');
+    const link    = p.link || '#';
+    return `<div class="art-card">
+      <div class="art-meta">
+        <span class="art-num">NO. ${String(i+1).padStart(2,'0')}</span>
+        <span class="art-date">${date}</span>
+      </div>
+      <div class="art-title">${title}</div>
+      <div class="art-excerpt">${excerpt||'Click to read the full article…'}</div>
+      <a class="art-btn" href="${link}" target="_blank" rel="noopener">Read Article ${arrow}</a>
+    </div>`;
+  }).join('');
+}
+
+function filterPosts(){
+  const q=document.getElementById('search-input').value.toLowerCase().trim();
+  const sort=document.getElementById('sort-select').value;
+  let f=allPosts.filter(p=>(p.title||'').toLowerCase().includes(q)||stripHtml(p.description||'').toLowerCase().includes(q));
+  f.sort((a,b)=>{
+    if(sort==='newest')return new Date(b.pubDate)-new Date(a.pubDate);
+    if(sort==='oldest')return new Date(a.pubDate)-new Date(b.pubDate);
+    if(sort==='az')return (a.title||'').localeCompare(b.title||'');
+    if(sort==='za')return (b.title||'').localeCompare(a.title||'');
+    return 0;
+  });
+  renderPosts(f);
+}
+
+async function loadPosts(){
+  const grid=document.getElementById('rss-feed');
+  try{
+    const res = await fetch(RSS2JSON);
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const data = await res.json();
+    if(data.status !== 'ok') throw new Error(data.message || 'Feed error');
+    if(!data.items || data.items.length === 0) throw new Error('No posts in feed');
+    allPosts = data.items;
+    filterPosts();
+  }catch(err){
+    grid.innerHTML=`<div class="state-card">
+      <div style="font-size:2.5rem;margin-bottom:12px">⚠️</div>
+      <h3>Could Not Load Articles</h3>
+      <p>${err.message}</p>
+      <p style="margin-top:8px;font-size:0.75rem;color:var(--slate);">
+        For 50 posts: get a free API key at <a href="https://rss2json.com" target="_blank" style="color:var(--gold)">rss2json.com</a> and add <code style="color:var(--gold3)">&amp;api_key=YOUR_KEY</code> to RSS2JSON URL in the script.
+      </p>
+      <button class="retry-btn" onclick="loadPosts()">🔄 Retry</button>
+    </div>`;
+    document.getElementById('count-chip').textContent='Error';
+  }
+}
+loadPosts();
+</script>
+</body>
+</html>
