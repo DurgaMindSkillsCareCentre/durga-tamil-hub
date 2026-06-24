@@ -177,6 +177,8 @@ fetch(API)
 .then(response => response.json())
 .then(data => {
 
+alert("Posts found: " + data.items.length);
+
 const container =
 document.getElementById('rss-feed');
 
