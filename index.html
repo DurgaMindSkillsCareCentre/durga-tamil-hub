@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0"><title>D. Durga | Tamil Mental Health Knowledge Hub</title><meta name="description" content="Tamil Mental Health, Relationships, Family Wellness, Sexual Health, Parenting, Soft Skills and Human Development Knowledge Hub by D. Durga."><style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,Arial,sans-serif;
+}
+
+body{
+background:#081120;
+color:#ffffff;
+line-height:1.7;
+}
+
+.hero{
+padding:60px 20px;
+text-align:center;
+background:linear-gradient(180deg,#081120,#0f172a);
+}
+
+.hero img{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:50%;
+border:5px solid #D4AF37;
+box-shadow:0 0 25px rgba(212,175,55,.35);
+}
+
+.hero h1{
+margin-top:20px;
+font-size:3rem;
+color:#D4AF37;
+}
+
+.hero p{
+max-width:900px;
+margin:12px auto;
+color:#cbd5e1;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.stat{
+background:#111827;
+padding:20px;
+min-width:170px;
+border-radius:16px;
+border:1px solid rgba(212,175,55,.25);
+}
+
+.stat h3{
+color:#D4AF37;
+font-size:2rem;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:25px;
+}
+
+.card{
+background:#111827;
+padding:25px;
+border-radius:20px;
+margin-bottom:25px;
+border:1px solid rgba(212,175,55,.18);
+}
+
+.card h2{
+color:#D4AF37;
+margin-bottom:15px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.article{
+background:#0f172a;
+padding:20px;
+border-radius:15px;
+border:1px solid rgba(212,175,55,.15);
+transition:.3s;
+}
+
+.article:hover{
+transform:translateY(-4px);
+}
+
+.article a{
+color:#D4AF37;
+text-decoration:none;
+font-weight:bold;
+}
+
+.btn{
+display:inline-block;
+margin-top:15px;
+padding:14px 28px;
+background:#D4AF37;
+color:#081120;
+text-decoration:none;
+font-weight:bold;
+border-radius:12px;
+}
+
+.footer{
+text-align:center;
+padding:40px;
+color:#94a3b8;
+}
+
+</style></head><body><section class="hero"><img src="durga.jpg" alt="D. Durga"><h1>D. DURGA</h1><p>
+Founder & CEO – Durga Psychiatric Centre & Durga MindSkillsCare Centre
+</p><p>
+Mental Health • Relationships • Family Wellness • Sexual Health • Parenting • Human Development
+</p><div class="stats"><div class="stat">
+<h3>500+</h3>
+<p>Resources</p>
+</div><div class="stat">
+<h3>100+</h3>
+<p>Tamil Articles</p>
+</div><div class="stat">
+<h3>200+</h3>
+<p>English Articles</p>
+</div></div></section><div class="container"><div class="card"><h2>📚 தமிழ் அறிவுக் களஞ்சியம்</h2><p>
+Mental Health • Marriage Counselling • Sexual Health • Parenting • Soft Skills • Emotional Intelligence • Family Wellness
+</p></div><div class="card"><h2>📰 Latest Tamil Articles</h2><div id="rss-feed" class="grid"><div class="article">
+<h3>Loading Articles...</h3>
+<p>Latest Tamil articles will appear automatically.</p>
+</div></div></div><div class="card"><h2>🌐 Resources</h2><div class="grid"><div class="article">
+<a href="https://durgapsychiatriccentrechennai.wordpress.com">
+WordPress Library
+</a>
+</div><div class="article">
+<a href="https://durga-mindskillscare.pages.dev">
+Main Website
+</a>
+</div><div class="article">
+<a href="https://durgapsychiatric.blogspot.com">
+Blogger
+</a>
+</div></div></div><div class="card"><h2>💬 Consultation & Workshops</h2><p>
+Marriage Counselling • Sexual Health • Mental Wellness • Soft Skills Training • Parenting Guidance
+</p><a class="btn" href="https://wa.me/917395944527">
+WhatsApp Consultation
+</a></div></div><div class="footer">© D. Durga | Durga Psychiatric Centre | Durga MindSkillsCare Centre
+
+</div><script>
+
+/* Future RSS JSON Integration */
+
+const samplePosts = [
+
+{
+title:"Tamil Mental Health Resource",
+link:"https://durgapsychiatriccentrechennai.wordpress.com"
+},
+
+{
+title:"Marriage Counselling Guide",
+link:"https://durgapsychiatriccentrechennai.wordpress.com"
+},
+
+{
+title:"Family Wellness Article",
+link:"https://durgapsychiatriccentrechennai.wordpress.com"
+}
+
+];
+
+const container=document.getElementById("rss-feed");
+
+container.innerHTML="";
+
+samplePosts.forEach(post=>{
+
+container.innerHTML += `
+<div class="article">
+<h3>${post.title}</h3>
+<a href="${post.link}" target="_blank">
+Read Article →
+</a>
+</div>
+`;
+
+});
+
+</script></body>
+</html>
