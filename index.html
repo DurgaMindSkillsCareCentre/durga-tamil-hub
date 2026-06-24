@@ -166,38 +166,16 @@ WhatsApp Consultation
 
 /* Future RSS JSON Integration */
 
-const RSS_URL =
-'https://durgapsychiatriccentrechennai.wordpress.com/feed/';
-
-const API =
-'https://api.rss2json.com/v1/api.json?rss_url=' +
-encodeURIComponent(RSS_URL);
-
-fetch(API)
-.then(response => response.json())
-.then(data => {
-
 const container =
 document.getElementById('rss-feed');
 
-container.innerHTML='';
-
-data.items.slice(0,15).forEach(post => {
-
-container.innerHTML += `
-
-<div class="article"><h3>${post.title}</h3><p>${post.pubDate.substring(0,10)}</p><a href="${post.link}" target="_blank">
-Read Article →
-</a></div>
-`;});
-
-})
-.catch(error => {
-
-document.getElementById('rss-feed').innerHTML =
-'<div class="article"><h3>Unable to load articles</h3></div>';
-
-});
+container.innerHTML = `
+<div class="article">
+<h3>TEST SUCCESS</h3>
+<p>JavaScript is working.</p>
+</div>
+`;
+    
 </script>
 
 
