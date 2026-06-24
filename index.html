@@ -182,11 +182,13 @@ document.getElementById('rss-feed');
 
 container.innerHTML='';
 
-data.items.slice(0,15).forEach(post => {
+data.items.slice(0,30).forEach(post => {
 
 container.innerHTML += `
 
-<div class="article"><h3>${post.title}</h3><p>${post.pubDate.substring(0,10)}</p><a href="${post.link}" target="_blank">
+<div class="article"><h3 style="line-height:1.5;">
+${post.title}
+</h3>   <p>${post.pubDate.substring(0,10)}</p><a href="${post.link}" target="_blank">
 Read Article →
 </a></div>
 `;});
