@@ -267,7 +267,7 @@ footer{position:relative;z-index:1;background:var(--navy);border-top:1px solid v
     <div class="state-card">
       <div class="spinner"></div>
       <h3>Fetching Articles</h3>
-      <p>Loading 50 posts from WordPress…</p>
+      <p>Loading 100 posts from WordPress…</p>
     </div>
   </div>
 </section>
@@ -393,7 +393,7 @@ async function loadPosts(){
       <h3>Could Not Load Articles</h3>
       <p>${err.message}</p>
       <p style="margin-top:8px;font-size:0.75rem;color:var(--slate);">
-        For 50 posts: get a free API key at <a href="https://rss2json.com" target="_blank" style="color:var(--gold)">rss2json.com</a> and add <code style="color:var(--gold3)">&amp;api_key=YOUR_KEY</code> to RSS2JSON URL in the script.
+        For 100 posts: get a free API key at <a href="https://rss2json.com" target="_blank" style="color:var(--gold)">rss2json.com</a> and add <code style="color:var(--gold3)">&amp;api_key=YOUR_KEY</code> to RSS2JSON URL in the script.
       </p>
       <button class="retry-btn" onclick="loadPosts()">🔄 Retry</button>
     </div>`;
